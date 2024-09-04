@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.Date;
+
 @Entity
 @Data
 @Table(name = "students")
@@ -21,5 +23,17 @@ public class Student {
 
     @Column(nullable = false)
     private String phoneNumber;
+
+    @Column(nullable = false)
+    private String fullName;
+
+    @Column(nullable = false)
+    private int level;
+
+    @ManyToOne
+    @JoinColumn(name = "number_group" , nullable = false)
+    private Group group;
+
+    private Date lastTime;
 
 }
