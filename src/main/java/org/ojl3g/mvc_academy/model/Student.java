@@ -19,5 +19,7 @@ public class Student {
     @Column(nullable = false)
     private String password;
 
+    @Column(nullable = false)
+    private String phoneNumber;
 
 }
