@@ -4,7 +4,8 @@ import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Data
@@ -18,6 +19,14 @@ public class Topic {
     @Column(nullable = false)
     private String nameTopic;
 
-    @OneToMany(mappedBy = "topic")
-    private List<GroupTopic> groupTopics;
+    @ManyToMany(mappedBy = "topic")
+    private Set<Group> groupTopics;
+
+    @ManyToMany()
+    @JoinTable(
+            name = "user_topic",//название для связывающей таблицы (3 таблица)
+            joinColumns = @JoinColumn(name = "user_id"), //(1 колонка для таблицы)
+            inverseJoinColumns = @JoinColumn(name = "topic_id") //(2 колонка для таблицы)
+    )
+    private Set<User> users = new HashSet<>();
 }

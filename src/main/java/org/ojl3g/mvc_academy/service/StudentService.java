@@ -1,6 +1,6 @@
 package org.ojl3g.mvc_academy.service;
 
-import org.ojl3g.mvc_academy.model.Student;
+import org.ojl3g.mvc_academy.model.User;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -8,18 +8,18 @@ import java.util.List;
 @Service
 public interface StudentService {
 
-    void save(Student student);
+    void save(User user);
 
-    Student getStudent(int id);
+    User getStudent(int id);
 
-    List<Student> getAllStudents();
+    List<User> getAllStudents();
 
     void deleteStudent(int id);
 
-    Student updateStudent(Student student);
+    User updateStudent(User user);
 
-    List<Student> getStudentByGroup(int group);
+    List<User> getStudentByGroup(int group);
 
-    Student getStudentByLoginAndPassword(String login, String password);
+    User getStudentByLoginAndPassword(String login, String password);
 
 }

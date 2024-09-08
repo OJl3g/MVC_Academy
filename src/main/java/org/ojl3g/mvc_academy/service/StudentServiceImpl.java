@@ -1,23 +1,23 @@
 package org.ojl3g.mvc_academy.service;
 
-import org.ojl3g.mvc_academy.model.Student;
+import org.ojl3g.mvc_academy.model.User;
 
 import java.util.List;
 
 public class StudentServiceImpl implements StudentService{
 
     @Override
-    public void save(Student student) {
+    public void save(User user) {
 
     }
 
     @Override
-    public Student getStudent(int id) {
+    public User getStudent(int id) {
         return null;
     }
 
     @Override
-    public List<Student> getAllStudents() {
+    public List<User> getAllStudents() {
         return List.of();
     }
 
@@ -27,17 +27,17 @@ public class StudentServiceImpl implements StudentService{
     }
 
     @Override
-    public Student updateStudent(Student student) {
+    public User updateStudent(User user) {
         return null;
     }
 
     @Override
-    public List<Student> getStudentByGroup(int group) {
+    public List<User> getStudentByGroup(int group) {
         return List.of();
     }
 
     @Override
-    public Student getStudentByLoginAndPassword(String login, String password) {
+    public User getStudentByLoginAndPassword(String login, String password) {
         return null;
     }
 }

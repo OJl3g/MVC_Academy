@@ -4,7 +4,9 @@ import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Data
@@ -21,9 +23,14 @@ public class Group {
     private String classSchedule; //расписание занятий
 
     @OneToMany(mappedBy = "group")
-    private List<Student> students;
+    private List<User> users;
 
-    @OneToMany(mappedBy = "group")
-    private List<GroupTopic> groupTopics;
+    @ManyToMany(mappedBy = "group")
+    @JoinTable(
+            name = "group_topic",
+            joinColumns = @JoinColumn(name = "id_group",referencedColumnName = "id" ),
+            inverseJoinColumns = @JoinColumn(name = "id_role",referencedColumnName = "id")
+    )
+    private Set<Topic> topics = new HashSet<>();
 
 }
