@@ -1,12 +1,13 @@
 package org.ojl3g.mvc_academy.service;
 
+import org.ojl3g.mvc_academy.dto.UserLoginDTO;
 import org.ojl3g.mvc_academy.model.User;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public interface StudentService {
+public interface UserService {
 
     void save(User user);
 
@@ -21,5 +22,7 @@ public interface StudentService {
     List<User> getStudentByGroup(int group);
 
     User getStudentByLoginAndPassword(String login, String password);
+
+    User findUserByLoginAndPassword(UserLoginDTO userLoginDTO);
 
 }

@@ -25,7 +25,7 @@ public class Group {
     @OneToMany(mappedBy = "group")
     private List<User> users;
 
-    @ManyToMany(mappedBy = "group")
+    @ManyToMany()
     @JoinTable(
             name = "group_topic",
             joinColumns = @JoinColumn(name = "id_group",referencedColumnName = "id" ),

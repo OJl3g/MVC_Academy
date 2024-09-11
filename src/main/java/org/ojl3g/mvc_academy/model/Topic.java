@@ -19,7 +19,7 @@ public class Topic {
     @Column(nullable = false)
     private String nameTopic;
 
-    @ManyToMany(mappedBy = "topic")
+    @ManyToMany(mappedBy = "topics")
     private Set<Group> groupTopics;
 
     @ManyToMany()

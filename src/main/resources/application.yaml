@@ -1,1 +1,16 @@
-spring.application.name=MVC_Academy
+spring:
+  application:
+    name: MVC_Academy
+
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    password: postgres
+    url: jdbc:postgresql://localhost:5432/Academy_DB
+    username: postgres
+
+
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: true
