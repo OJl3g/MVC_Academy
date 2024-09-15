@@ -34,7 +34,7 @@ public class User {
     private int level;
 
     @ManyToOne
-    @JoinColumn(name = "number_group" , nullable = false)
+    @JoinColumn(name = "number_group", nullable = false)
     private Group group;
 
     private Date lastTime;

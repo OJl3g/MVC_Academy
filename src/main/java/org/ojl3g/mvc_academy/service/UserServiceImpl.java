@@ -9,7 +9,7 @@ import java.util.List;
 
 @Service
 public class UserServiceImpl implements UserService {
-    private UserRepository  userRepository;
+    private UserRepository userRepository;
 
     public UserServiceImpl(UserRepository userRepository) {
         this.userRepository = userRepository;
@@ -17,6 +17,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void save(User user) {
+        userRepository.save(user); // Сохраняем пользователя в базу данных
 
     }
 
@@ -52,6 +53,6 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User findUserByLoginAndPassword(UserLoginDTO userLoginDTO) {
-       return userRepository.findByLoginAndPassword(userLoginDTO.getLogin(), userLoginDTO.getPassword());
+        return userRepository.findByLoginAndPassword(userLoginDTO.getLogin(), userLoginDTO.getPassword());
     }
 }

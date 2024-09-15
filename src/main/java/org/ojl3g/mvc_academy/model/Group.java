@@ -28,8 +28,8 @@ public class Group {
     @ManyToMany()
     @JoinTable(
             name = "group_topic",
-            joinColumns = @JoinColumn(name = "id_group",referencedColumnName = "id" ),
-            inverseJoinColumns = @JoinColumn(name = "id_role",referencedColumnName = "id")
+            joinColumns = @JoinColumn(name = "id_group", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(name = "id_role", referencedColumnName = "id")
     )
     private Set<Topic> topics = new HashSet<>();
 
